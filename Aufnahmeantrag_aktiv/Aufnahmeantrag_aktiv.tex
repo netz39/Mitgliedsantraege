@@ -1,0 +1,74 @@
+\documentclass[parskip=half]{scrreprt}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{lmodern}
+\usepackage[margin=2cm]{geometry}
+\usepackage{eurosym}
+\usepackage[shortlabels]{enumitem}
+\usepackage{csquotes}
+
+% ToDo-Notes: Parameter "disable" versteckt alle Notizen.
+\usepackage[colorinlistoftodos]{todonotes}
+\newcommand{\litnote}[1]{\todo[inline,color=blue!40]{#1}}
+\newcommand{\refnote}[1]{\todo[color=blue!40]{#1}}
+\newcommand{\note}[1]{\todo[inline,color=green!40]{#1}}
+
+
+\usepackage[pdftex,colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\def\LayoutTextField#1#2{#2}
+\def\tf#1#2{\TextField[name=#1,width=#2,bordercolor={},backgroundcolor={}]{\null}}
+
+\def\LayoutCheckField#1#2{#2}
+\def\cb#1{\CheckBox[name=#1,height=0.5cm,width=0.5cm,bordercolor=black]{\null}}
+
+\usepackage{tabularx}
+
+\pagenumbering{gobble}
+
+\begin{document}
+\section*{Aufnahmeantrag\\ zur aktiven Mitgliedschaft im Netz39\ e.V.}
+
+\begin{Form}
+Hiermit beantrage ich die aktive Mitgliedschaft als natürliche Person im Netz39 e.V.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{| p{5cm} | X |}
+\hline
+Nachname & \tf{nachname}{10cm}\\
+\hline
+Vorname & \tf{vorname}{10cm}\\
+\hline
+\end{tabularx}
+\end{center}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{| p{5cm} | X |}
+\hline
+Straße& \tf{strasse}{10cm}\\
+\hline
+PLZ, Wohnort & \tf{plzort}{10cm}\\
+\hline
+\end{tabularx}
+\end{center}
+
+\begin{center}
+\begin{tabularx}{\textwidth}{| p{5cm} | X |}
+\hline
+E-Mail-Adresse & \tf{email}{10cm}\\
+\hline
+\end{tabularx}
+\end{center}
+
+Die Mitgliedsbeiträge richten sich nach der jeweils gültigen Beschlussfassung der Mitgliederversammlung. Mit meiner Unterschrift erkenne ich die Satzung des Netz e.V. an und verpflichte mich, die satzungsgemäßen Ziele des Netz39\ e.V. nach Kräften zu unterstützen.
+
+\vspace{2cm}
+\begin{tabular}{p{7cm}p{.5cm}p{7cm}}
+\tf{datum}{7cm} & & \\
+\dotfill & & \dotfill \\
+Ort, Datum & & Unterschrift \\
+\end{tabular}%
+
+\end{Form}
+\end{document}
