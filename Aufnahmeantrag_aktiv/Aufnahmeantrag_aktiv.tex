@@ -93,18 +93,42 @@
 
 \usepackage[headsepline, footsepline]{scrlayer-scrpage}
 \renewcommand{\headfont}{\sffamily}
+\renewcommand{\footfont}{\sffamily \small}
 \setlength{\headheight}{58pt} % logo height
+\setlength{\footheight}{58pt} % logo height
 \clearpairofpagestyles
 \ihead{%
 \unitlength1mm
 \begin{picture}(0,0)
-      \put(0, 2){\parbox{180mm}{\n39logo}}
-      \put(17,1){\parbox{180mm}{ \sffamily \huge Netz39 e.V.}}
+      \put(0, 7){\parbox{180mm}{\n39logo}}
+      \put(17,6){\parbox{180mm}{ \sffamily \huge Netz39 e.V.}}
 \end{picture}
+}
+\setlength{\footheight}{9em} % logo height
+\ifoot{
+\begin{tabular}{rl}
+    Vorsitzende   &  Stefan Haun\\
+                  &  Rick Hollinski\\
+    Kassenwart    &  David Kilias%
+\end{tabular}%
+}
+\cfoot{
+\begin{tabular}{rl}
+    IBAN&  DE64\ 4306\ 0967\ 4120\ 8043\ 00\\
+    BIC&   GENODEM1GLS\\
+    &     GLS Gemeinschaftsbank%
+\end{tabular}%
+}
+\ofoot{
+\begin{tabular}{l}
+    Amtsgericht Stendal\\
+    VR\ 3169\\
+    \ %
+\end{tabular}%
 }
 
 
-\pagenumbering{gobble}
+%\pagenumbering{gobble}
 
 \begin{document}
 \section*{Aufnahmeantrag\\ zur aktiven Mitgliedschaft im Netz39\ e.V.}
