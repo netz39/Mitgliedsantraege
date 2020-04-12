@@ -41,17 +41,22 @@ Nachname       & \dotfill \\
 
                & \tf{vorname}{10cm}\\
 Vorname        & \dotfill \\
+\end{tabularx}
 
-\\[2em]
-
+\begin{tabularx}{\textwidth}{@{}p{5cm} X}
                & \tf{strasse}{10cm}\\
 Straße         & \dotfill \\
 
                & \tf{plzort}{10cm}\\
 PLZ, Wohnort   & \dotfill\\
+\end{tabularx}
 
-\\[2em]
+\begin{tabularx}{\textwidth}{@{}p{5cm} p{4cm} X p{5cm}}
+               & \tf{gebdatum}{4cm} & & \tf{gebort}{4cm} \\
+Geboren am     & \dotfill & in & \dotfill
+\end{tabularx}
 
+\begin{tabularx}{\textwidth}{@{}p{5cm} X}
                & \tf{email}{10cm}\\
 E-Mail-Adresse & \dotfill%
 \end{tabularx}
@@ -68,7 +73,7 @@ Ort, Datum & & Unterschrift \\
 
 \end{Form}
 
-\vspace{2cm}
+\vspace{3cm}
 \setlength{\fboxsep}{0.5em}
 \colorbox{gray!20}{
 %\fbox{    % fbox als Alternative zur colorbox
