@@ -1,5 +1,13 @@
 # Mitgliederformulare
 
+## Repository
+
+* Abgestimmte Dokumente werden als eigenständige PDF versioniert abgelegt
+
+## Änderungen
+
+Änderungen bitte immer als PR einreichen!
+
 ## Latex im Dockercontainer
 
 - [Quelle](https://github.com/blang/latex-docker/)
