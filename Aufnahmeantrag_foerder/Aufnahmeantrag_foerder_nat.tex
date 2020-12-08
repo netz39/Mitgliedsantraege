@@ -1,0 +1,95 @@
+\documentclass[parskip=half]{scrreprt}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{lmodern}
+\usepackage[margin=2cm]{geometry}
+\usepackage{eurosym}
+\usepackage[shortlabels]{enumitem}
+\usepackage{csquotes}
+
+% ToDo-Notes: Parameter "disable" versteckt alle Notizen.
+\usepackage[colorinlistoftodos]{todonotes}
+\newcommand{\litnote}[1]{\todo[inline,color=blue!40]{#1}}
+\newcommand{\refnote}[1]{\todo[color=blue!40]{#1}}
+\newcommand{\note}[1]{\todo[inline,color=green!40]{#1}}
+
+
+\usepackage[pdftex,colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\def\LayoutTextField#1#2{#2}
+\def\tf#1#2{\TextField[name=#1,width=#2,bordercolor={},backgroundcolor={}]{\null}}
+
+\def\LayoutCheckField#1#2{#2}
+\def\cb#1{\CheckBox[name=#1,height=0.5cm,width=0.5cm,bordercolor=black]{\null}}
+
+\usepackage{tabularx}
+\usepackage{xcolor}
+
+\include{headfoot}
+
+\begin{document}
+\section*{Aufnahmeantrag\\ für natürliche Personen zur Fördermitgliedschaft im Netz39\ e.V.}
+
+\begin{Form}
+Hiermit beantrage ich die Fördermitgliedschaft als natürliche Person im Netz39\ e.V.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}p{5cm} X}
+               & \tf{nachname}{10cm}\\
+Nachname       & \dotfill \\
+
+               & \tf{vorname}{10cm}\\
+Vorname        & \dotfill \\
+\end{tabularx}
+
+\begin{tabularx}{\textwidth}{@{}p{5cm} X}
+               & \tf{strasse}{10cm}\\
+Straße         & \dotfill \\
+
+               & \tf{plzort}{10cm}\\
+PLZ, Wohnort   & \dotfill\\
+\end{tabularx}
+
+\begin{tabularx}{\textwidth}{@{}p{5cm} p{4cm} X p{5cm}}
+               & \tf{gebdatum}{4cm} & & \tf{gebort}{4cm} \\
+Geboren am     & \dotfill & in & \dotfill
+\end{tabularx}
+
+\begin{tabularx}{\textwidth}{@{}p{5cm} X}
+               & \tf{email}{10cm}\\
+E-Mail-Adresse & \dotfill%
+\end{tabularx}
+\end{center}
+
+\cb{cb_30} Ich möchte 30 \euro{} / Monat zahlen\\
+\cb{cb_beitrag} Ich möchte \tf{beitrag}{1cm} \euro{} / Monat zahlen\\
+
+Ein Wechsel aus der Fördermitgliedschaft in die aktive Mitgliedschaft ist jederzeit möglich. Für den umgekehrten Wechsel gelten die in der Satzung festgelegten regulären Kündigungsfristen der aktiven Mitgliedschaft. 
+
+Mit meiner Unterschrift erkenne ich die Satzung des Netz39\ e.V. an und verpflichte mich, die satzungsgemäßen Ziele des Netz39\ e.V. nach Kräften zu unterstützen.
+
+\vspace{1cm}
+\begin{tabular}{p{7cm}p{.5cm}p{7cm}}
+\tf{datum}{7cm} & & \\
+\dotfill & & \dotfill \\
+Ort, Datum & & Unterschrift \\
+\end{tabular}%
+
+\end{Form}
+
+\vspace{1cm}
+\setlength{\fboxsep}{0.5em}
+\colorbox{gray!20}{
+%\fbox{    % fbox als Alternative zur colorbox
+\begin{minipage}{\textwidth - 2\fboxsep}
+{\tiny Dieser Bereich wird vom Vorstand ausgefüllt.}\\[1em]
+Der Vorstand bestätigt die Aufnahme.\\
+
+\begin{tabularx}{\textwidth}{@{}p{4cm} c p{5cm} c p{5cm}}
+\dotfill & & \dotfill & & \dotfill\\
+Datum & & Unterschrift & & Unterschrift%
+\end{tabularx}
+\end{minipage}}
+
+\end{document}
