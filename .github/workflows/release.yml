@@ -1,0 +1,74 @@
+---
+name: Make Release
+
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+      - "v*" # Push events to matching v*, i.e. v1.0, v20.15.10
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code.
+        uses: actions/checkout@v2
+      - name: Build PDFs.
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: |
+            Einzug.tex
+            Aufnahmeantrag_aktiv.tex
+            Aufnahmeantrag_foerder_nat.tex
+            Aufnahmeantrag_foerder_jur.tex
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+
+      - name: Upload Einzug.pdf
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./Einzug.pdf
+          asset_name: einzug.pdf
+          asset_content_type: application/pdf
+
+      - name: Upload Aufnahmeantrag_aktiv.pdf
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./Aufnahmeantrag_aktiv.pdf
+          asset_name: aufnahmeantrag-aktiv.pdf
+          asset_content_type: application/pdf
+
+      - name: Upload Aufnahmeantrag_foerder_nat.pdf
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./Aufnahmeantrag_foerder_nat.pdf
+          asset_name: aufnahmeantrag-foerder-nat.pdf
+          asset_content_type: application/pdf
+
+      - name: Upload Aufnahmeantrag_foerder_jur.pdf
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./Aufnahmeantrag_foerder_jur.pdf
+          asset_name: aufnahmeantrag-foerder-jur.pdf
+          asset_content_type: application/pdf
