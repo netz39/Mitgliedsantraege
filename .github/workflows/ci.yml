@@ -1,0 +1,30 @@
+---
+name: CI
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches: []
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code.
+      uses: actions/checkout@v2
+    - name: Build PDFs.
+      uses: xu-cheng/latex-action@v2
+      with:
+        root_file: |
+          Einzug.tex
+          Aufnahmeantrag_aktiv.tex
+          Aufnahmeantrag_foerder_nat.tex
+          Aufnahmeantrag_foerder_jur.tex
+    - name: Upload PDFs.
+      uses: actions/upload-artifact@v2
+      with:
+        name: PDFs
+        path: "*.pdf"
+        retention-days: 5
+        if-no-files-found: error
