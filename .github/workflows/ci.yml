@@ -5,17 +5,22 @@ on:
     branches:
       - master
   pull_request:
-    branches:
-      - master
+    branches: []
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: docker-practice/actions-setup-docker@v1
+    - name: Checkout code.
+      uses: actions/checkout@v2
     - name: Build PDFs.
-      run: make
+      uses: xu-cheng/latex-action@v2
+      with:
+        root_file: |
+          Einzug.tex
+          Aufnahmeantrag_aktiv.tex
+          Aufnahmeantrag_foerder_nat.tex
+          Aufnahmeantrag_foerder_jur.tex
     - name: Check PDFs exist.
       id: check_files
       uses: andstor/file-existence-action@v1
