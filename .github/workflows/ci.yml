@@ -26,4 +26,5 @@ jobs:
       with:
         name: PDFs
         path: "*.pdf"
+        retention-days: 5
         if-no-files-found: error
