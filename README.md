@@ -45,3 +45,9 @@ git push --tags
 ```
 
 Über den [Release Workflow](.github/workflows/release.yml) wird automatisch ein Release angelegt.
+
+Die jeweils neuste Formularversion ist über folgende Links verfügbar:
+* [Aufnahmeantrag für aktive Mitglieder](https://github.com/netz39/Mitgliedsantraege/releases/latest/download/aufnahmeantrag-aktiv.pdf)
+* [Aufnahmeantrag Fördermitglied — natürliche Person](https://github.com/netz39/Mitgliedsantraege/releases/latest/download/aufnahmeantrag-foerder-nat.pdf)
+* [Aufnahmeantrag Fördermitglied — juristische Person](https://github.com/netz39/Mitgliedsantraege/releases/latest/download/aufnahmeantrag-foerder-jur.pdf)
+* [SEPA-Mandat für den Bankeinzug](https://github.com/netz39/Mitgliedsantraege/releases/latest/download/einzug.pdf)
