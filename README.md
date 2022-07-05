@@ -20,3 +20,34 @@
 make
 make clean
 ```
+
+## Release einer Formularversion
+
+Releases werden automatisiert erstellt, wenn ein Tag angelegt wird.
+
+Tags sind an [Semantic Versioning](https://semver.org/) angelehnt und haben die Form `vA.B`
+* `A` beschreibt die Version des Inhalts und wird erhöht, wenn sich durch Formulierungen oder Änderungen der rechtliche Rahmen ändert.
+* `B` beschreibt kleine Anpassungen, z.B. Vorstandswechsel oder das korrigieren von Schreibfehlern und Layout.
+
+Beide Versionsnummern können mehrstellig sein. Eine Formularversion `v3.14` ist gültig.
+
+
+Um ein Tag anzulegen:
+```bash
+A=3 # Major version
+B=1 # Minor version
+
+git checkout master
+git pull
+# Hier prüfen, dass master und origin/master übereinstimmen
+git tag "v${A}.${B}"   # alternativ git tag v3.1
+git push --tags
+```
+
+Über den [Release Workflow](.github/workflows/release.yml) wird automatisch ein Release angelegt.
+
+Die jeweils neuste Formularversion ist über folgende Links verfügbar:
+* [Aufnahmeantrag für aktive Mitglieder](https://github.com/netz39/Mitgliedsantraege/releases/latest/download/aufnahmeantrag-aktiv.pdf)
+* [Aufnahmeantrag Fördermitglied — natürliche Person](https://github.com/netz39/Mitgliedsantraege/releases/latest/download/aufnahmeantrag-foerder-nat.pdf)
+* [Aufnahmeantrag Fördermitglied — juristische Person](https://github.com/netz39/Mitgliedsantraege/releases/latest/download/aufnahmeantrag-foerder-jur.pdf)
+* [SEPA-Mandat für den Bankeinzug](https://github.com/netz39/Mitgliedsantraege/releases/latest/download/einzug.pdf)
