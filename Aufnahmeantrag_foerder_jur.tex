@@ -3,12 +3,14 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
-\usepackage{lmodern}
+\usepackage{helvet}
+\renewcommand*{\familydefault}{\sfdefault}
 \usepackage[margin=2cm]{geometry}
 \usepackage{eurosym}
 \usepackage[shortlabels]{enumitem}
 \usepackage{csquotes}
 \usepackage[babel=true]{microtype}
+\usepackage{setspace}
 
 % ToDo-Notes: Parameter "disable" versteckt alle Notizen.
 \usepackage[colorinlistoftodos]{todonotes}
@@ -37,6 +39,7 @@
 Hiermit beantrage ich die Fördermitgliedschaft als juristische Person im \netzEV
 
 \begin{center}
+\begin{spacing}{0.75}
 \begin{tabularx}{\textwidth}{@{}p{5cm} X}
                & \tf{name}{10cm}\\
 Name       & \dotfill \\
@@ -58,6 +61,7 @@ E-Mail-Adresse & \dotfill%
                & \tf{betrag}{10cm}\\
 Vereinbarte Förderung & \dotfill%
 \end{tabularx}
+\end{spacing}
 \end{center}
 
 Die Mitgliedsbeiträge richten sich nach der jeweils gültigen Beschlussfassung der Mitgliederversammlung. Mit meiner Unterschrift erkenne ich die Satzung des \netzEV an und verpflichte mich, die satzungsgemäßen Ziele des \netzEV nach Kräften zu unterstützen.

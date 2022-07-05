@@ -3,12 +3,14 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
-\usepackage{lmodern}
+\usepackage{helvet}
+\renewcommand*{\familydefault}{\sfdefault}
 \usepackage[margin=2cm]{geometry}
 \usepackage{eurosym}
 \usepackage[shortlabels]{enumitem}
 \usepackage{csquotes}
 \usepackage[babel=true]{microtype}
+\usepackage{setspace}
 
 % ToDo-Notes: Parameter "disable" versteckt alle Notizen.
 \usepackage[colorinlistoftodos]{todonotes}
@@ -37,6 +39,7 @@
 Hiermit beantrage ich die Fördermitgliedschaft als natürliche Person im \netzEV
 
 \begin{center}
+\begin{spacing}{0.75}
 \begin{tabularx}{\textwidth}{@{}p{5cm} X}
                & \tf{nachname}{10cm}\\
 Nachname       & \dotfill \\
@@ -62,16 +65,30 @@ Geboren am     & \dotfill & in & \dotfill
                & \tf{email}{10cm}\\
 E-Mail-Adresse & \dotfill%
 \end{tabularx}
+\end{spacing}
 \end{center}
 
-\cb{cb_30} Ich möchte 30 \euro{} / Monat zahlen\\
-\cb{cb_beitrag} Ich möchte \tf{beitrag}{1cm} \euro{} / Monat zahlen\\
+\cb{cb_30} Ich möchte 30 \euro{} / Monat zahlen \hspace{3em} \cb{cb_beitrag} Ich möchte \tf{beitrag}{1cm} \euro{} / Monat zahlen\\
 
-Ein Wechsel aus der Fördermitgliedschaft in die aktive Mitgliedschaft ist jederzeit möglich. Für den umgekehrten Wechsel gelten die in der Satzung festgelegten regulären Kündigungsfristen der aktiven Mitgliedschaft.
+Ein Wechsel aus der Fördermitgliedschaft in die aktive Mitgliedschaft ist jederzeit möglich.
 
 Mit meiner Unterschrift erkenne ich die Satzung des \netzEV an und verpflichte mich, die satzungsgemäßen Ziele des \netzEV nach Kräften zu unterstützen.
 
-\vspace{1cm}
+\fbox {
+\begin{minipage}{\textwidth - 2\fboxsep}
+\textbf{Wir weisen gemäß § 33 Bundesdatenschutzgesetz darauf hin, dass zum Zweck der Mitgliederverwaltung und -betreuung folgende Daten der Mitglieder in automatisierten Dateien gespeichert, verarbeitet und genutzt werden:\\
+Name, Postanschrift, Geburtsdatum und -ort, E-Mail-Adresse}
+\vspace{1em}
+
+\textbf{Einverständnis zur Datenerhebung und -verarbeitung:}
+Ich bin mit der Erhebung, Verarbeitung und Nutzung der oben genannten personenbezogenen Daten durch den Verein zur Mitgliederverwaltung im Wege der elektronischen Datenverarbeitung einverstanden. Mir ist bekannt, dass dem Aufnahmeantrag ohne dieses Einverständnis nicht stattgegeben werden kann.
+\vspace{1em}
+
+Mit meiner Unterschrift stimme ich der Datenverarbeitung zu.
+\end{minipage}
+} % fbox
+
+\vspace{0.2cm}
 \begin{tabular}{p{7cm}p{.5cm}p{7cm}}
 \tf{datum}{7cm} & & \\
 \dotfill & & \dotfill \\
@@ -80,7 +97,7 @@ Ort, Datum & & Unterschrift \\
 
 \end{Form}
 
-\vspace{1cm}
+\vspace{0.2cm}
 \setlength{\fboxsep}{0.5em}
 \colorbox{gray!20}{
 %\fbox{    % fbox als Alternative zur colorbox
