@@ -12,9 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code.
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
     - name: Build PDFs.
-      uses: xu-cheng/latex-action@v2
+      uses: xu-cheng/latex-action@v3
       with:
         root_file: |
           Einzug.tex
@@ -22,7 +22,7 @@ jobs:
           Aufnahmeantrag_foerder_nat.tex
           Aufnahmeantrag_foerder_jur.tex
     - name: Upload PDFs.
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: PDFs
         path: "*.pdf"
