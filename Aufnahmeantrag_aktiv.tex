@@ -1,4 +1,4 @@
-\documentclass[parskip=half]{scrreprt}
+\documentclass[10pt,parskip=half]{scrartcl}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -11,6 +11,7 @@
 \usepackage{csquotes}
 \usepackage[babel=true]{microtype}
 \usepackage{setspace}
+\usepackage{amssymb}
 
 % ToDo-Notes: Parameter "disable" versteckt alle Notizen.
 \usepackage[colorinlistoftodos]{todonotes}
@@ -33,40 +34,59 @@
 \include{headfoot}
 
 \begin{document}
-\section*{Aufnahmeantrag\\ zur aktiven Mitgliedschaft im \netzEV}
+\section*{Aufnahmeantrag zur aktiven Mitgliedschaft im \netzEV}
 
 \begin{Form}
 Hiermit beantrage ich die aktive Mitgliedschaft als natürliche Person im \netzEV
 
 \begin{center}
 \begin{spacing}{0.75}
-\begin{tabularx}{\textwidth}{@{}p{5cm} X}
-               & \tf{nachname}{10cm}\\
+\begin{tabularx}{\textwidth}{@{}p{3cm} X}
+               & \tf{nachname}{13.3cm}\\
 Nachname       & \dotfill \\
 
-               & \tf{vorname}{10cm}\\
+               & \tf{vorname}{13.3cm}\\
 Vorname        & \dotfill \\
 \end{tabularx}
 
-\begin{tabularx}{\textwidth}{@{}p{5cm} X}
-               & \tf{strasse}{10cm}\\
+\begin{tabularx}{\textwidth}{@{}p{3cm} X}
+               & \tf{strasse}{13.3cm}\\
 Straße         & \dotfill \\
 
-               & \tf{plzort}{10cm}\\
+               & \tf{plzort}{13.3cm}\\
 PLZ, Wohnort   & \dotfill\\
 \end{tabularx}
 
-\begin{tabularx}{\textwidth}{@{}p{5cm} p{4cm} X p{5cm}}
-               & \tf{gebdatum}{4cm} & & \tf{gebort}{4cm} \\
-Geboren am     & \dotfill & in & \dotfill
+\begin{tabularx}{\textwidth}{@{}p{3cm} X}
+               & \tf{gebdatum}{13.3cm}\\
+Geboren am     & \dotfill\\
 \end{tabularx}
 
-\begin{tabularx}{\textwidth}{@{}p{5cm} X}
-               & \tf{email}{10cm}\\
+\begin{tabularx}{\textwidth}{@{}p{3cm} X}
+               & \tf{email}{13.3cm}\\
 E-Mail-Adresse & \dotfill%
 \end{tabularx}
 \end{spacing}
 \end{center}
+
+
+\noindent
+\textbf{Beitrag:} \\[0.4cm]
+\CheckBox[width=0.4cm, height=0.3cm, bordercolor=black, backgroundcolor=white]{} Voll(30€) \hspace{1cm} \CheckBox[width=0.4cm, height=0.3cm ,bordercolor=black, backgroundcolor=white]{} 
+Ermäßigt:  \TextField[
+  name=betrag,
+  width=3cm,
+  height=0.4cm,
+  bordercolor=black,
+  backgroundcolor=white
+]{\makebox[3cm][l]{\dotfill}} € / Monat \\[0.3cm]
+zusätzliche monatliche Spende:    \hspace{0.15cm} \TextField[
+  name=betrag,
+  width=3cm,
+  height=0.4cm,
+  bordercolor=black,
+  backgroundcolor=white
+]{\makebox[3cm][l]{\dotfill}} € / Monat\\
 
 Die Mitgliedsbeiträge richten sich nach der jeweils gültigen Beschlussfassung der Mitgliederversammlung. Mit meiner Unterschrift erkenne ich die Satzung des \netzEV an und verpflichte mich, die satzungsgemäßen Ziele des \netzEV nach Kräften zu unterstützen.
 \vspace{2em}
