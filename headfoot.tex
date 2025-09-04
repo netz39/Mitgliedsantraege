@@ -64,6 +64,7 @@
 	  %% Logo End
 }
 % will be overriden by GitHub action at building PDFs
+\def\gitTag{vX.X.X} 
 \def\gitHash{xxxxxxx}
 \InputIfFileExists{gitinfo.tex}{}{}
 
@@ -101,5 +102,5 @@
     \ %
 \end{tabular}% 
 \vfill
-\hfill \scriptsize PDF-Revision: git-\gitHash
+\hfill \scriptsize PDF-Revision: \gitTag (git-\gitHash)
 }
