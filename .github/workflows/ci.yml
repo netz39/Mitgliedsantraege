@@ -1,5 +1,5 @@
 ---
-name: CI
+name: Compile LaTeX files to PDF
 on:
   push:
     branches:
@@ -13,6 +13,14 @@ jobs:
     steps:
     - name: Checkout code.
       uses: actions/checkout@v4
+      
+    - name: Fetch tags
+      run: git fetch --prune --unshallow --tags
+
+    - name: get Git tag info
+      run: |
+        echo "\\def\\gitTag{`git describe --tags || echo 'no-tag'`}" >> gitinfo.tex
+
     - name: Build PDFs.
       uses: xu-cheng/latex-action@v3
       with:
@@ -21,6 +29,7 @@ jobs:
           Aufnahmeantrag_aktiv.tex
           Aufnahmeantrag_foerder_nat.tex
           Aufnahmeantrag_foerder_jur.tex
+
     - name: Upload PDFs.
       uses: actions/upload-artifact@v4
       with:

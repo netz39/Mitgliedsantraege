@@ -63,6 +63,9 @@
 	  \end{tikzpicture}
 	  %% Logo End
 }
+% will be overriden by GitHub action at building PDFs
+\def\gitTag{vX.X.X}
+\InputIfFileExists{gitinfo.tex}{}{}
 
 \usepackage[headsepline]{scrlayer-scrpage}
 \renewcommand{\headfont}{\sffamily}
@@ -96,5 +99,7 @@
     Amtsgericht Stendal\\
     VR\ 3169\\
     \ %
-\end{tabular}%
+\end{tabular}% 
+\vfill
+\hfill \scriptsize PDF-Revision: \gitTag
 }
