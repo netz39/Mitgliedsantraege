@@ -64,8 +64,7 @@
 	  %% Logo End
 }
 % will be overriden by GitHub action at building PDFs
-\def\gitTag{vX.X.X} 
-\def\gitHash{xxxxxxx}
+\def\gitTag{vX.X.X}
 \InputIfFileExists{gitinfo.tex}{}{}
 
 \usepackage[headsepline]{scrlayer-scrpage}
@@ -102,5 +101,5 @@
     \ %
 \end{tabular}% 
 \vfill
-\hfill \scriptsize PDF-Revision: \gitTag (git-\gitHash)
+\hfill \scriptsize PDF-Revision: \gitTag
 }

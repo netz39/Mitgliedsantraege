@@ -17,10 +17,9 @@ jobs:
     - name: Fetch tags
       run: git fetch --prune --unshallow --tags
 
-    - name: get Git commit info
+    - name: get Git tag info
       run: |
-        echo "\\def\\gitHash{`git rev-parse --short HEAD`}" > gitinfo.tex
-        echo "\\def\\gitTag{`git describe --tags --abbrev=0 || echo 'no-tag'`}" >> gitinfo.tex
+        echo "\\def\\gitTag{`git describe --tags || echo 'no-tag'`}" >> gitinfo.tex
 
     - name: Build PDFs.
       uses: xu-cheng/latex-action@v3
